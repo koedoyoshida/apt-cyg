@@ -338,9 +338,9 @@ apt-searchall () {
     /-debuginfo-/             {next}
     /-devel-/ && pkg~/\.exe$/ {next}
     /-src\t$/                 {next}
-    mc[$2]++                  {next}
-    $0 = $2
-    ' FS=/ pkg="$pkg" matches
+    mc[$3]++                  {next}
+    { print $1 }
+    ' pkg="$pkg" matches
   done
 }
 
